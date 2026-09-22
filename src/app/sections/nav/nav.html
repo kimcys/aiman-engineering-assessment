@@ -1,0 +1,26 @@
+<div class="mx-auto flex h-[72px] max-w-[1584px] items-center justify-between gap-4 px-6 sm:px-12">
+  <div class="flex min-w-0 items-center gap-3">
+    <img src="/star-logo-mark.png" alt="Star Media Group" class="h-7 w-auto shrink-0" />
+    <p class="truncate text-[13px] font-bold text-ink">
+      Aiman Hakim / ENGINEERING ASSESSMENT
+    </p>
+  </div>
+
+  <ul class="hidden items-start gap-[18px] whitespace-nowrap text-[11px] md:flex">
+    @for (chapter of chapters; track chapter.index) {
+      <li>
+        <button
+          type="button"
+          (click)="goTo(chapter.index)"
+          [title]="chapter.category"
+          class="cursor-pointer font-bold"
+          [class]="spy.active() === chapter.index ? 'text-accent' : 'text-muted font-normal'"
+        >
+          {{ chapter.index.toString().padStart(2, '0') }}
+        </button>
+      </li>
+    }
+  </ul>
+
+  <app-status-badge label="LIVE · ALL SYSTEMS NOMINAL" class="hidden sm:inline-flex"></app-status-badge>
+</div>

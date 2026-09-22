@@ -1,0 +1,11 @@
+<div class="flex h-[42px] shrink-0 items-center justify-between bg-accent-soft px-4">
+  <p class="text-[11px] text-muted">{{ filename() }}</p>
+  <button type="button" (click)="copy()" class="cursor-pointer">
+    <app-status-badge [label]="copied() ? 'COPIED' : 'COPY'"></app-status-badge>
+  </button>
+</div>
+<div class="flex flex-1 flex-col overflow-x-auto p-5">
+  @for (line of lines(); track $index) {
+    <p class="whitespace-pre text-[12px] leading-[1.65] text-accent">{{ line }}</p>
+  }
+</div>

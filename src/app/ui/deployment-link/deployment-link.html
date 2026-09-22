@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-1.5">
+  <p class="text-[11px] text-muted">{{ label() }}</p>
+  <a [href]="'https://' + url()" target="_blank" rel="noopener" class="text-base font-bold text-ink hover:text-accent">
+    {{ url() }}
+  </a>
+</div>
+<app-status-badge label="LIVE"></app-status-badge>

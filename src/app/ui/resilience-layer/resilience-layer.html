@@ -1,0 +1,9 @@
+<div
+  class="flex h-[58px] items-center justify-between rounded-md border border-hairline px-5"
+  [class]="active() ? 'bg-accent text-white' : 'bg-white text-ink'"
+>
+  <p class="text-sm font-bold">{{ label() }}</p>
+  <p class="text-[11px]" [class]="active() ? 'text-white/80' : 'text-muted'">
+    BOUND → OBSERVE → RECOVER
+  </p>
+</div>
