@@ -156,16 +156,16 @@ export const CHAPTER_6 = {
       phase: 'CORRELATE',
       detail: 'Failures aligned with concurrent jobs; one release exhausted all retries.',
     },
-    { time: '00:46', phase: 'CONTAIN', detail: 'Temporary retry restored release flow.' },
-    { time: '01:15', phase: 'FIX', detail: 'Set NODE_OPTIONS="--max-old-space-size=2048" ceiling.' },
+    { time: '00:46', phase: 'CONTAIN', detail: 'Automatic retry restored release flow — still the live mitigation today.' },
+    { time: '01:15', phase: 'FIX', detail: 'Identified the real fix: a fixed NODE_OPTIONS memory ceiling for the build.' },
     {
       time: '~02:00',
       phase: 'PREVENT',
-      detail: 'Escalated runner capacity to DevOps; retained retry as recovery layer.',
+      detail: 'Flagged runner capacity to DevOps — their call, not mine to change unilaterally.',
     },
   ],
-  lessonLabel: 'PROPER FIX IN ABOUT 2 HOURS',
-  lessonDetail: 'Bound memory; scale the runner; keep retry as recovery, not the fix.',
+  lessonLabel: 'RETRY LIVE · CEILING STILL PENDING',
+  lessonDetail: 'Retry is the confirmed mitigation today; a bounded memory ceiling is the identified fix, not yet confirmed landed.',
 };
 
 export const CHAPTER_7 = {
