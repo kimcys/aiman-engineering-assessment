@@ -187,8 +187,8 @@ export const CHAPTER_7 = {
 
 export const CHAPTER_8 = {
   layers: [
-    { label: '01 Timeouts', active: true },
-    { label: '02 Retries only for safe / idempotent reads' },
+    { label: '01 Timeouts — every call bounded at 8s', active: true },
+    { label: '02 Retries — safe GET/HEAD only, 2 attempts, 500ms → 1s backoff' },
     { label: '03 Circuit breaker' },
     { label: '04 Isolated resource pools / bulkheads' },
     { label: '05 Graceful fallback' },
