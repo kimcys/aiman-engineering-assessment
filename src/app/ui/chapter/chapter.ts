@@ -5,6 +5,7 @@ import {
   OnDestroy,
   input,
   inject,
+  signal,
 } from '@angular/core';
 import { ChapterSpyService } from '../../core/chapter-spy';
 import { IconComponent } from '../icon/icon';
@@ -26,9 +27,15 @@ export class ChapterComponent implements AfterViewInit, OnDestroy {
   question = input.required<string>();
   tinted = input(false);
 
+  readonly expanded = signal(true);
+
   private readonly elementRef = inject(ElementRef<HTMLElement>);
   private readonly spy = inject(ChapterSpyService);
   private observer?: IntersectionObserver;
+
+  toggle(): void {
+    this.expanded.update((value) => !value);
+  }
 
   classes(): string {
     const bg = this.tinted() ? 'bg-tint' : 'bg-white';

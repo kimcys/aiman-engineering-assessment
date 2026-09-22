@@ -7,15 +7,22 @@
         </p>
         <p class="text-[11px] uppercase text-muted">{{ category() }}</p>
       </div>
-      <div class="flex items-center gap-2.5">
-        <p class="text-[11px] text-muted">EXPANDED</p>
-        <app-icon name="minus" class="inline-flex shrink-0"></app-icon>
-      </div>
+      <button
+        type="button"
+        (click)="toggle()"
+        [attr.aria-expanded]="expanded()"
+        class="flex cursor-pointer items-center gap-2.5"
+      >
+        <p class="text-[11px] text-muted">{{ expanded() ? 'EXPANDED' : 'COLLAPSED' }}</p>
+        <app-icon [name]="expanded() ? 'minus' : 'plus'" class="inline-flex shrink-0"></app-icon>
+      </button>
     </div>
     <p class="max-w-[1050px] text-[26px] leading-[1.2] sm:text-[32px] lg:text-[38px]">
       {{ question() }}
     </p>
   </div>
 
-  <ng-content></ng-content>
+  @if (expanded()) {
+    <ng-content></ng-content>
+  }
 </div>

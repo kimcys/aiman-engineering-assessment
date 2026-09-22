@@ -23,3 +23,10 @@ body {
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
 }
+
+/* Angular never sets a display style on the root host element, so browsers
+   default <app-root> to `inline` — which breaks position:sticky for any
+   block child (the nav) inside it. */
+app-root {
+  display: block;
+}
