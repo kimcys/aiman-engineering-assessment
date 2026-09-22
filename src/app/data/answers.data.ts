@@ -30,8 +30,8 @@ export const CHAPTER_1 = {
   ] satisfies Evidence[],
   additional: [
     {
-      title: 'Shared GitLab CI · 3 projects',
-      body: 'helm → sonarqube coverage → analysis → build → deploy. Registry-backed buildx caching and immutable deployed tags.',
+      title: 'Shared GitLab CI · AgentBee / SmartFMS / eHealth',
+      body: 'helm → sonarqube coverage → analysis → build → deploy, via shared hidden-job templates each project extends. Registry-backed buildx caching and immutable per-commit tags — though the three projects genuinely differ: SmartFMS tests inside a throwaway container with coverage wired into GitLab\'s own report UI, eHealth is the plainest of the three (no build cache, forces a rollout restart on deploy).',
     },
     {
       title: 'Live resubmission · 3 parallel pipelines',
@@ -89,7 +89,7 @@ export const CHAPTER_3 = {
     },
     {
       title: 'Maintainable',
-      detail: 'Shared version-controlled templates · reusable project-local blocks',
+      detail: 'Inline hidden-job templates each real job extends (how AgentBee/SmartFMS/eHealth do it today) · a shared template project for more than a handful of projects',
     },
   ],
   code: {
